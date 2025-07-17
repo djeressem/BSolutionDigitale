@@ -1,15 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <h1 class="title">Hello World</h1>
-        <div id="mainDiv">Hello Div</div>
-        <br />
-        <button onclick="buttonClicked()">Click me</button>
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEINDÉ SOLUTION DIGITALE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Lien vers votre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques utilisant les variables CSS définies dans styles.css */
+        .btn-primary {
+            background-color: var(--color-bleu-azur);
+            color: var(--color-blanc-pur);
+            padding-left: 1.5rem; /* px-6 */
+            padding-right: 1.5rem; /* px-6 */
+            padding-top: 0.75rem; /* py-3 */
+            padding-bottom: 0.75rem; /* py-3 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            transition-property: background-color;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+            font-weight: 600; /* font-semibold */
+        }
+        .btn-primary:hover {
+            background-color: var(--color-violet-digital);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-width: 2px;
+            border-color: var(--color-bleu-azur);
+            color: var(--color-bleu-azur);
+            padding-left: 1.5rem; /* px-6 */
+            padding-right: 1.5rem; /* px-6 */
+            padding-top: 0.75rem; /* py-3 */
+            padding-bottom: 0.75rem; /* py-3 */
+            border-radius: 0.5rem; /* rounded-lg */
+            transition-property: background-color, color;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+            font-weight: 600; /* font-semibold */
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-bleu-azur);
+            color: var(--color-blanc-pur);
+        }
+
+        footer a {
+            color: var(--color-blanc-pur);
+            transition-property: color;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+        }
+        footer a:hover {
+            color: var(--color-bleu-azur);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-bleu-nuit text-blanc-pur shadow-md py-4 px-6 fixed w-full top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo (pictogramme) -->
+                <img src="pictograme logo (2).png" alt="Logo BEINDÉ" class="h-10 w-10">
+                <span class="text-2xl font-bold">BEINDÉ SOLUTION DIGITALE</span>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="#accueil" class="nav-link hover:text-bleu-azur transition duration-300">Accueil</a></li>
+                <li><a href="#a-propos" class="nav-link hover:text-bleu-azur transition duration-300">À propos de nous</a></li>
+                <li><a href="#services" class="nav-link hover:text-bleu-azur transition duration-300">Services</a></li>
+                <li><a href="#portfolio" class="nav-link hover:text-bleu-azur transition duration-300">Portfolio</a></li>
+                <li><a href="#blog" class="nav-link hover:text-bleu-azur transition duration-300">Blog</a></li>
+                <li><a href="#contact" class="nav-link hover:text-bleu-azur transition duration-300">Contact</a></li>
+                <li><a href="#devis" class="nav-link btn-primary py-2 px-4 text-sm">Demander un Devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow mt-16"> <!-- Marge supérieure pour compenser l'en-tête fixe -->
+
+        <!-- Page: Accueil -->
+        <section id="accueil" class="content-section active">
+            <div id="home-hero">
+                <div class="hero-background-carousel" style="transform: translateX(0%);">
+                    <img src="istockphoto-1060739400-612x612.jpg" alt="Background 1">
+                    <img src="istockphoto-1222544927-612x612.jpg" alt="Background 2">
+                    <img src="istockphoto-1013820482-612x612.jpg" alt="Background 3">
+                    <img src="istockphoto-1487255881-612x612.jpg" alt="Background 4">
+                    <img src="istockphoto-2219686569-612x612.jpg" alt="Background 5">
+                    <img src="istockphoto-1367475519-612x612.jpg" alt="Background 6">
+                </div>
+                <div class="hero-content">
+                    <h1 class="text-5xl font-bold mb-4 text-blanc-pur">Révolutionnez Votre Visibilité Numérique</h1>
+                    <p class="text-xl mb-8 text-blanc-pur max-w-3xl">Avec BEINDÉ SOLUTION DIGITALE, bénéficiez d'une expertise et d'une accessibilité inégalées pour propulser votre présence en ligne.</p>
+                    <div class="flex space-x-4">
+                        <a href="#devis" class="nav-link btn-primary">Demander un Devis</a>
+                        <a href="#services" class="nav-link btn-secondary">Nos Services</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Bar - Moved here, below the hero section -->
+            <div class="container mx-auto py-8 text-center">
+                <div class="flex items-center justify-center space-x-2 w-full max-w-md mx-auto">
+                    <input type="text" id="serviceSearchInput" placeholder="Rechercher un service..." class="p-2 rounded-lg text-gray-800 w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-bleu-azur">
+                    <button id="searchServiceBtn" class="bg-bleu-azur text-blanc-pur p-2 rounded-lg hover:bg-violet-digital transition duration-300">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container mx-auto py-16 text-center text-bleu-nuit">
+                <h2 class="text-4xl font-bold mb-8 text-bleu-nuit">Pourquoi choisir BEINDÉ SOLUTION DIGITALE ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-lightbulb text-bleu-azur text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Innovation</h3>
+                        <p class="text-gray-700">Des solutions avant-gardistes pour une présence numérique toujours à la pointe.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-handshake text-violet-digital text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Fiabilité</h3>
+                        <p class="text-gray-700">Un partenaire de confiance pour des projets solides et durables.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-users text-bleu-azur text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Accompagnement</h3>
+                        <p class="text-gray-700">Un support personnalisé à chaque étape de votre transformation digitale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: À propos de nous -->
+        <section id="a-propos" class="content-section">
+            <div class="container mx-auto py-16">
+                <h2 class="text-4xl font-bold mb-12 text-center text-bleu-nuit">À propos de BEINDÉ SOLUTION DIGITALE</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                    <div class="md:w-1/2">
+                        <img src="pictograme logo (4).png" alt="Notre Histoire" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-lg mb-4 text-gray-700">
+                            Fondée par Arsène DJERESSEM BEINDÉ, BEINDÉ SOLUTION DIGITALE est née de la passion pour le numérique et de la volonté d'offrir des solutions complètes et accessibles aux entreprises et aux particuliers. Nous croyons en la puissance du digital pour transformer les idées en succès concrets.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Notre mission est de démystifier le monde numérique, de fournir des outils performants et de former nos clients pour qu'ils puissent pleinement tirer parti des opportunités offertes par le web.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold mb-8 text-center text-bleu-nuit">Notre Équipe</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                    <!-- Membre 1 -->
+                    <div class="flex flex-col items-center">
+                        <img src="unnamed.png" alt="Membre Équipe 1" class="circular-image w-24 h-24 mb-4">
+                        <h4 class="text-xl font-semibold text-bleu-nuit">DJERESSEM BEINDÉ Arsène</h4>
+                        <p class="text-gray-600">Fondateur & Expert Digital</p>
+                    </div>
+                    <!-- Membre 2 -->
+                    <div class="flex flex-col items-center">
+                        <img src="485147568_706697011688396_2104155379412574879_n.jpg" alt="Membre Équipe 2" class="circular-image w-24 h-24 mb-4">
+                        <h4 class="text-xl font-semibold text-bleu-nuit">DJENAISSEM BEINDE Audry</h4>
+                        <p class="text-gray-600">Développeur Web Senior</p>
+                    </div>
+                    <!-- Membre 3 -->
+                    <div class="flex flex-col items-center">
+                        <img src="462188019_122184184862083767_854474084831083122_n.jpg" alt="Membre Équipe 3" class="circular-image w-24 h-24 mb-4">
+                        <h4 class="text-xl font-semibold text-bleu-nuit">BEINDE Raïssa</h4>
+                        <p class="text-gray-600">Designer Graphique</p>
+                    </div>
+                    <!-- Membre 4 -->
+                    <div class="flex flex-col items-center">
+                        <img src="471505586_648921074132657_6040866401821999986_n.jpg" alt="Membre Équipe 4" class="circular-image w-24 h-24 mb-4">
+                        <h4 class="text-xl font-semibold text-bleu-nuit">NEMERCIE BEINDE Carine</h4>
+                        <p class="text-gray-600">Consultante Marketing Digital</p>
+                    </div>
+                    <!-- Membre 5 -->
+                    <div class="flex flex-col items-center">
+                        <img src="465065938_596154602746733_2797981764142400934_n.jpg" alt="Membre Équipe 5" class="circular-image w-24 h-24 mb-4">
+                        <h4 class="text-xl font-semibold text-bleu-nuit">DJEKAOUSSEM BEINDE Honneur</h4>
+                        <p class="text-gray-600">Spécialiste IT & Réseaux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Services -->
+        <section id="services" class="content-section">
+            <div class="container mx-auto py-16">
+                <h2 class="text-4xl font-bold mb-12 text-center text-bleu-nuit">Nos Services Complets</h2>
+                <p class="text-lg text-center mb-12 text-gray-700 max-w-3xl mx-auto">
+                    Chez BEINDÉ SOLUTION DIGITALE, nous offrons une gamme étendue de services pour propulser votre présence numérique et optimiser vos outils.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: Production de Sites Web -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-1371339413-612x612.jpg" alt="Web Design" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Production de Sites Web</h3>
+                        <p class="text-gray-700 mb-4">Conception personnalisée, développement responsive et maintenance pour une présence en ligne impeccable.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Sites Vitrine & E-commerce</li>
+                            <li>Développement sur mesure</li>
+                            <li>Optimisation SEO & UX</li>
+                        </ul>
+                        <a href="#devis" class="nav-link btn-primary mt-6 text-sm">Demander un Site</a>
+                    </div>
+                    <!-- Service 2: Vente de Produits Informatiques & Électriques -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-623383876-612x612.jpg" alt="Produits IT" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Produits IT & Électriques</h3>
+                        <p class="text-gray-700 mb-4">Ordinateurs, périphériques, logiciels professionnels, équipements électroniques et solutions domotiques.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Conseil en équipement</li>
+                            <li>Logiciels & Licences</li>
+                            <li>Domotique intelligente</li>
+                        </ul>
+                        <a href="#contact" class="nav-link btn-primary mt-6 text-sm">Voir les Produits</a>
+                    </div>
+                    <!-- Service 3: Infographie & Sérigraphie -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-1013820482-612x612.jpg" alt="Infographie" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Infographie & Sérigraphie</h3>
+                        <p class="text-gray-700 mb-4">Création graphique (logos, brochures) et impression personnalisée sur textiles et objets.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Design de Logo & Charte</li>
+                            <li>Supports Visuels Marketing</li>
+                            <li>Impression sur mesure</li>
+                        </ul>
+                        <a href="#portfolio" class="nav-link btn-primary mt-6 text-sm">Voir nos Créations</a>
+                    </div>
+                    <!-- Service 4: Formation et Conseil -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-2186780950-612x612.jpg" alt="Formation" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Formation & Conseil</h3>
+                        <p class="text-gray-700 mb-4">Modules adaptés à votre niveau, coaching personnalisé et conseil stratégique digital.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Formations pratiques</li>
+                            <li>Coaching individuel</li>
+                            <li>Stratégie digitale</li>
+                        </ul>
+                        <a href="#contact" class="nav-link btn-primary mt-6 text-sm">Découvrir les Formations</a>
+                    </div>
+                    <!-- Service 5: Révolutionner la Visibilité Numérique -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-997478496-612x612.jpg" alt="Visibilité Numérique" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Révolutionner la Visibilité Numérique</h3>
+                        <p class="text-gray-700 mb-4">Nous optimisons votre présence en ligne pour maximiser votre impact et atteindre vos objectifs.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Stratégie SEO/SEA</li>
+                            <li>Marketing de Contenu</li>
+                            <li>Gestion des Réseaux Sociaux</li>
+                        </ul>
+                        <a href="#devis" class="nav-link btn-primary mt-6 text-sm">Optimiser ma Visibilité</a>
+                    </div>
+                    <!-- Service 6: Support et Maintenance -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="istockphoto-1278382147-612x612.jpg" alt="Support et Maintenance" class="circular-image w-32 h-32 mb-4">
+                        <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Support & Maintenance</h3>
+                        <p class="text-gray-700 mb-4">Assistance technique continue et mises à jour régulières pour la pérennité de vos outils digitaux.</p>
+                        <ul class="text-left text-gray-600 list-disc list-inside">
+                            <li>Assistance technique</li>
+                            <li>Mises à jour logicielles</li>
+                            <li>Sécurité & Sauvegardes</li>
+                        </ul>
+                        <a href="#contact" class="nav-link btn-primary mt-6 text-sm">Contacter le Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Portfolio / Réalisations -->
+        <section id="portfolio" class="content-section">
+            <div class="container mx-auto py-16">
+                <h2 class="text-4xl font-bold mb-12 text-center text-bleu-nuit">Notre Portfolio / Nos Réalisations</h2>
+                <p class="text-lg text-center mb-12 text-gray-700 max-w-3xl mx-auto">
+                    Découvrez quelques-uns de nos projets récents qui illustrent notre expertise et notre créativité. Chaque réalisation est le fruit d'une collaboration étroite avec nos clients.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projet 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="d9c9ca3071f052121f8c70ccd8b0e89b.jpg" alt="Projet Web 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Site E-commerce "La Boutique Locale"</h3>
+                            <p class="text-gray-700 mb-4">Création d'une plateforme de vente en ligne responsive et intuitive pour des artisans locaux.</p>
+                            <a href="#" class="btn-secondary text-sm">Voir le Projet</a>
+                        </div>
+                    </div>
+                    <!-- Projet 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="04492d5a1f9795ea195ffb79053a8e73.jpg" alt="Design Graphique 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Refonte Identité Visuelle "Café Urbain"</h3>
+                            <p class="text-gray-700 mb-4">Conception d'un nouveau logo, charte graphique et supports de communication pour un café moderne.</p>
+                            <a href="#" class="btn-secondary text-sm">Voir le Projet</a>
+                        </div>
+                    </div>
+                    <!-- Projet 3 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="d589110e11e8a427583569d498ed653f.jpg" alt="App Mobile 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Application Mobile "Mon Coach Sportif"</h3>
+                            <p class="text-gray-700 mb-4">Développement d'une application de suivi d'entraînement avec fonctionnalités personnalisées.</p>
+                            <a href="#" class="btn-secondary text-sm">Voir le Projet</a>
+                        </div>
+                    </div>
+                    <!-- Projet 4 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="9f0d52b0dc4599d20c7d649a791c03d1.jpg" alt="Sérigraphie 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-bleu-nuit">Sérigraphie Personnalisée "Événement Local"</h3>
+                            <p class="text-gray-700 mb-4">Création et impression de t-shirts et sacs pour un festival culturel local.</p>
+                            <a href="#" class="btn-secondary text-sm">Voir le Projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Blog / Ressources -->
+        <section id="blog" class="content-section">
+            <div class="container mx-auto py-16">
+                <h2 class="text-4xl font-bold mb-12 text-center text-bleu-nuit">Blog & Ressources Digitales</h2>
+                <p class="text-lg text-center mb-12 text-gray-700 max-w-3xl mx-auto">
+                    Restez informé des dernières tendances et apprenez de nos experts grâce à nos articles, guides et tutoriels.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="3cf4bcab17a881e4da493290474bc781.jpg" alt="Article Blog 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-bleu-nuit">5 Étapes Clés pour un Site Web Réussi en 2024</h3>
+                            <p class="text-gray-700 text-sm mb-4">Découvrez les fondamentaux pour créer une présence en ligne qui convertit.</p>
+                            <a href="#" class="text-bleu-azur hover:underline text-sm">Lire l'article <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="c2b61c2cc17d2c939a7726acf0cf66a0.jpg" alt="Article Blog 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-bleu-nuit">L'Importance de la Charte Graphique pour Votre Marque</h3>
+                            <p class="text-gray-700 text-sm mb-4">Comprenez comment une identité visuelle cohérente renforce votre entreprise.</p>
+                            <a href="#" class="text-bleu-azur hover:underline text-sm">Lire l'article <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 3 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="7b9b1efaa753da70045d7621f9605347.jpg" alt="Article Blog 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-bleu-nuit">Optimiser Votre SEO : Les Bases Indispensables</h3>
+                            <p class="text-gray-700 text-sm mb-4">Améliorez votre classement sur les moteurs de recherche avec nos conseils pratiques.</p>
+                            <a href="#" class="text-bleu-azur hover:underline text-sm">Lire l'article <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Contact -->
+        <section id="contact" class="content-section">
+            <div class="container mx-auto py-16">
+                <h2 class="text-4xl font-bold mb-12 text-center text-bleu-nuit">Contactez-nous</h2>
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-bleu-nuit">Envoyez-nous un message</h3>
+                        <form id="contactForm" action="https://formspree.io/f/votre_ID_de_formulaire_contact" method="POST" class="space-y-4">
+                            <div id="contactMessage" class="hidden p-3 mb-4 rounded-lg text-center"></div>
+                            <div>
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nom Complet</label>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Votre nom" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Votre email" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Sujet</label>
+                                <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Sujet de votre message">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Votre Message</label>
+                                <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Écrivez votre message ici..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Envoyer le Message</button>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-bleu-nuit">Nos Coordonnées</h3>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-map-marker-alt text-bleu-azur mr-3"></i>123 Rue du Digital, N'Djamena, Tchad</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-phone-alt text-bleu-azur mr-3"></i>+235 62 70 27 67 / 93 88 73 29</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-envelope text-bleu-azur mr-3"></i>contact@beindesolutiondigitale.com</p>
+                        <h3 class="text-2xl font-semibold mb-4 mt-8 text-bleu-nuit">Suivez-nous</h3>
+                        <div class="flex space-x-6 text-2xl">
+                            <a href="https://www.facebook.com/profile.php?id=61577121401545" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Page de devis / appel à l'action -->
+        <section id="devis" class="content-section">
+            <div class="container mx-auto py-16 text-center">
+                <h2 class="text-4xl font-bold mb-12 text-bleu-nuit">Demandez Votre Devis Personnalisé</h2>
+                <p class="text-lg mb-8 text-gray-700 max-w-3xl mx-auto">
+                    Décrivez-nous votre projet et notre équipe d'experts vous contactera rapidement avec une proposition adaptée à vos besoins et votre budget.
+                </p>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+                    <form id="devisForm" action="https://formspree.io/f/votre_ID_de_formulaire_devis" method="POST" class="space-y-4">
+                        <div id="devisMessage" class="hidden p-3 mb-4 rounded-lg text-center"></div>
+                        <div>
+                            <label for="devis-name" class="block text-gray-700 text-sm font-bold mb-2">Nom Complet</label>
+                            <input type="text" id="devis-name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Votre nom" required>
+                        </div>
+                        <div>
+                            <label for="devis-email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="devis-email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Votre email" required>
+                        </div>
+                        <div>
+                            <label for="devis-phone" class="block text-gray-700 text-sm font-bold mb-2">Téléphone (Optionnel)</label>
+                            <input type="tel" id="devis-phone" name="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Votre numéro de téléphone">
+                        </div>
+                        <div>
+                            <label for="devis-service" class="block text-gray-700 text-sm font-bold mb-2">Service(s) Intéressé(s)</label>
+                            <select id="devis-service" name="service" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                <option value="">Sélectionnez un service</option>
+                                <option value="web-design">Production de Sites Web</option>
+                                <option value="produits-it">Produits IT & Électriques</option>
+                                <option value="infographie">Infographie & Sérigraphie</option>
+                                <option value="formation">Formation & Conseil</option>
+                                <option value="visibilite">Révolutionner la Visibilité Numérique</option>
+                                <option value="support">Support & Maintenance</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="devis-message" class="block text-gray-700 text-sm font-bold mb-2">Décrivez Votre Projet</label>
+                            <textarea id="devis-message" name="message" rows="7" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Décrivez en détail votre projet et vos besoins..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Envoyer la Demande de Devis</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bleu-nuit text-blanc-pur py-10 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Colonne 1: À propos -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">BEINDÉ SOLUTION DIGITALE</h3>
+                <p class="text-gray-400 text-sm">Votre partenaire web complet pour une visibilité numérique révolutionnaire et des solutions innovantes.</p>
+                <div class="flex space-x-4 mt-4 text-2xl">
+                    <a href="https://www.facebook.com/profile.php?id=61577121401545" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="hover:text-bleu-azur"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Colonne 2: Liens Rapides -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Liens Rapides</h3>
+                <ul class="space-y-2">
+                    <li><a href="#accueil" class="nav-link text-gray-400 hover:text-bleu-azur">Accueil</a></li>
+                    <li><a href="#a-propos" class="nav-link text-gray-400 hover:text-bleu-azur">À propos de nous</a></li>
+                    <li><a href="#services" class="nav-link text-gray-400 hover:text-bleu-azur">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link text-gray-400 hover:text-bleu-azur">Portfolio</a></li>
+                    <li><a href="#blog" class="nav-link text-gray-400 hover:text-bleu-azur">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3: Services -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Nos Services</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>Production de Sites Web</li>
+                    <li>Produits IT & Électriques</li>
+                    <li>Infographie & Sérigraphie</li>
+                    <li>Formation & Conseil</li>
+                    <li>Visibilité Numérique</li>
+                    <li>Support & Maintenance</li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4: Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>123 Rue du Digital, N'Djamena, Tchad</p>
+                <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2"></i>+235 62 70 27 67 / 93 88 73 29</p>
+                <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2"></i>contact@beindesolutiondigitale.com</p>
+                <a href="#devis" class="nav-link btn-primary mt-4 inline-block text-sm">Demander un Devis</a>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2024 BEINDÉ SOLUTION DIGITALE. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Lien vers votre fichier JavaScript personnalisé -->
+    <script src="script.js"></script>
+</body>
 </html>
