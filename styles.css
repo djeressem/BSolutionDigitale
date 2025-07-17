@@ -1,0 +1,81 @@
+/* Styles personnalisés basés sur votre charte graphique */
+:root {
+    --color-bleu-nuit: #1A2B4D;
+    --color-bleu-azur: #4A90E2;
+    --color-violet-digital: #7B5BAA;
+    --color-blanc-pur: #FFFFFF;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bleu-nuit); /* Fond cohérent pour toute la page */
+    color: var(--color-blanc-pur);
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+/* Styles spécifiques pour l'en-tête et le pied de page pour qu'ils ressortent */
+header, footer {
+    background-color: var(--color-bleu-nuit);
+    color: var(--color-blanc-pur);
+}
+
+/* Style pour les sections de contenu principales */
+.content-section {
+    background-color: var(--color-blanc-pur); /* Fond blanc pour les zones de contenu */
+    color: var(--color-bleu-nuit); /* Texte foncé sur fond blanc */
+    padding: 4rem 0; /* Espacement vertical cohérent */
+    display: none; /* Caché par défaut, affiché par JS */
+    min-height: calc(100vh - 128px); /* Ajuster en fonction de la hauteur de l'en-tête/pied de page */
+}
+
+/* Styles spécifiques à la section Hero */
+#home-hero {
+    position: relative;
+    height: 100vh; /* Hauteur de la fenêtre d'affichage complète */
+    overflow: hidden;
+}
+
+.hero-background-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transition douce pour le carrousel */
+}
+
+.hero-background-carousel img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4); /* Assombrir les images pour la lisibilité du texte */
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposition pour la lisibilité du texte */
+    z-index: 10;
+    padding: 2rem;
+}
+
+/* Cadres d'image circulaires */
+.circular-image {
+    border-radius: 9999px; /* rounded-full de Tailwind */
+    object-fit: cover;
+    border: 4px solid var(--color-bleu-azur); /* Bordure pour les images circulaires */
+}
+
+/* Assure que le contenu est visible au-dessus du pied de page */
+main {
+    min-height: calc(100vh - 128px); /* Ajuster en fonction de la hauteur de l'en-tête/pied de page */
+}
